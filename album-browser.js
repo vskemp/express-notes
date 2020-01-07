@@ -7,7 +7,8 @@ app.get("/album/:albumId", (req, res) => {
     } catch (e) {
         console.log(e);
         console.log("++=+=vksov");
-        res.status(404).end("Sorry, everyone goofed!");
+        res.status(404);
+        res.send("Sorry, everyone goofed!");
 
     }
 });
