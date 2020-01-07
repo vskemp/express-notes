@@ -1,3 +1,5 @@
+const data = require('./albumsData.json');
+
 function getSongsForAlbum(albumId) {
     //return data.albums.find(album => album.id == albumId).songs;
     const theAlbum = data.albums.find((anAlbum) => {
@@ -11,5 +13,13 @@ function getSongsForAlbum(albumId) {
     //}
         return anAlbum.id == albumId;
     });
-    return theAlbum.songs;
+    if (theAlbum) {
+        return theAlbum.songs;
+    }else{
+        throw "Album not found";
+    }
 }
+module.exports = {
+    getAlbums,
+    getSongsForAlbum
+};
